@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry" language="groovy" pageWidth="164" pageHeight="340" columnWidth="124" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="parqueader"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="n_ticket" class="java.lang.String" nestedType="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from sisparqueadero.vistacompletaentrada,  sisparqueadero.datos_empresa 
+  where n_ticket =  $P{n_ticket}]]>
+	</queryString>
+	<field name="n_ticket" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="n_ticket"/>
+		<property name="com.jaspersoft.studio.field.label" value="n_ticket"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="id_entrada" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_entrada"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_entrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="id_espacio" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_espacio"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_espacio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="Dni" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="Dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="id_vehiculo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placa"/>
+		<property name="com.jaspersoft.studio.field.label" value="placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="nombreTipoVehiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombreTipoVehiculo"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombreTipoVehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="hora_entrada" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="hora_entrada"/>
+		<property name="com.jaspersoft.studio.field.label" value="hora_entrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="id_plan" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_plan"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_plan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="duracion" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="duracion"/>
+		<property name="com.jaspersoft.studio.field.label" value="duracion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="tipoDuracion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipoDuracion"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipoDuracion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="precioPorHora" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="precioPorHora"/>
+		<property name="com.jaspersoft.studio.field.label" value="precioPorHora"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="preciototal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="preciototal"/>
+		<property name="com.jaspersoft.studio.field.label" value="preciototal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistacompletaentrada"/>
+	</field>
+	<field name="id_empresa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_empresa"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_empresa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="COLUMN_17" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.label" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="direccion"/>
+		<property name="com.jaspersoft.studio.field.label" value="direccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="correo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="correo"/>
+		<property name="com.jaspersoft.studio.field.label" value="correo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<field name="mensaje" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mensaje"/>
+		<property name="com.jaspersoft.studio.field.label" value="mensaje"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="datos_empresa"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="120" height="14" uuid="e4b85f74-4318-47f9-80fa-771f4d3b8769">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TICKET DE ENTRADA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="56" width="120" height="14" uuid="ee576249-2a8a-4e65-b849-fc59c0349325">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="85" width="120" height="14" uuid="b34f94a1-ef9c-471d-bc87-5dc38d9f975b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="114" width="120" height="14" uuid="8dbb73b7-400b-4349-a9f0-21860e63e026">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="130" width="122" height="1" uuid="a868ff4f-609c-4e15-918c-67d1cdd8334e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="14" width="122" height="1" uuid="e57fa1bc-d9e6-4045-b8c6-7cf6c15b16e9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="42" width="119" height="13" uuid="7a259ab7-03cb-4ab7-a214-2dc7c6228f46">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[N.I.T]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="71" width="120" height="13" uuid="b4b237e0-0eee-4f9d-80e1-0b8c1c688842">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Contacto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="100" width="120" height="13" uuid="6dd499cb-e0be-4ed1-9070-d83fc759f71a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="14" width="120" height="28" uuid="cce0dd08-b9b8-4d21-a6a8-2f5774e90931"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_17}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="102" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="15" width="80" height="14" uuid="41261f25-d6db-4e35-9066-e7cdef3bac88">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="0" width="80" height="14" uuid="09fdb911-0145-4474-aef7-e81145a15ad7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n_ticket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="44" width="118" height="14" uuid="da3186b3-bcb4-4884-8f3b-bc85ee77d396">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hora_entrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="30" width="58" height="14" uuid="7a65defe-b605-45ef-8df6-2d487377de50">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha ingreso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="0" width="38" height="14" uuid="41d8fafe-b0bd-48f1-a3c5-038137b75cb5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Nº ticket:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="15" width="38" height="14" uuid="e5365f49-d285-4402-94bf-1c80cc147c93">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Placa:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="7" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

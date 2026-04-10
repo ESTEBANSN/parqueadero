@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EntradaSalidaTicket" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccc74a39-f0de-4e6d-b168-1a32411a5d78">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="parqueader"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="horaentrada" class="java.util.Date" nestedType="java.util.Date"/>
+	<parameter name="horasalida" class="java.util.Date" nestedType="java.util.Date"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM vistaplan
+WHERE 
+	 vistaplan.hora_entrada >=   $P{horaentrada} 
+	 AND vistaplan.hora_entrada <=  $P{horasalida} ]]>
+	</queryString>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="n_recibo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="n_recibo"/>
+		<property name="com.jaspersoft.studio.field.label" value="n_recibo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placa"/>
+		<property name="com.jaspersoft.studio.field.label" value="placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="dniPropietario" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="dniPropietario"/>
+		<property name="com.jaspersoft.studio.field.label" value="dniPropietario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="nombrePropietario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombrePropietario"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombrePropietario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="hora_entrada" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="hora_entrada"/>
+		<property name="com.jaspersoft.studio.field.label" value="hora_entrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="hora_salida" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="hora_salida"/>
+		<property name="com.jaspersoft.studio.field.label" value="hora_salida"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="TotalHoras" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TotalHoras"/>
+		<property name="com.jaspersoft.studio.field.label" value="TotalHoras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<field name="Total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Total"/>
+		<property name="com.jaspersoft.studio.field.label" value="Total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vistaplan"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="800" height="30" uuid="56b5823b-4771-4864-8ec9-5be36564fe82"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ENTRADA Y SALIDA DE VEHICULOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="0" y="36" width="210" height="30" uuid="2ec5f633-833e-41d4-b6c1-4512e8081a43"/>
+				<textFieldExpression><![CDATA[$P{horaentrada}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="MMM d, yyyy">
+				<reportElement x="600" y="30" width="200" height="30" uuid="e8f49206-0396-42b2-9597-5adb57033efc"/>
+				<textFieldExpression><![CDATA[$P{horasalida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="e613d8c9-e4d9-4891-963d-5cc87a18552f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d132a26-bb06-49f4-81f6-84bf4c48dffe"/>
+				</reportElement>
+				<text><![CDATA[Nº Recibo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="1" width="90" height="30" uuid="d160051f-f568-4ccc-821e-e191ac9dd64c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1de7776-dc13-4faf-af57-0f3ce58af217"/>
+				</reportElement>
+				<text><![CDATA[Placa vehiculo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="1" width="90" height="30" uuid="3aad3b58-9db4-4c1d-ab80-9532be1339c6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="135ac76e-009d-4ae4-8b67-cdced3ad257e"/>
+				</reportElement>
+				<text><![CDATA[Identificación prop.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="1" width="150" height="30" uuid="eb71710f-bcd6-45d7-abde-c877e7f29032">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fb333280-340a-4ed6-8a73-d33eb0a4d460"/>
+				</reportElement>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="-59" width="60" height="30" uuid="b41989f6-7e2a-4d4f-8422-1d342fac1df3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dea87ed2-a392-46ec-8b0a-35d16e87c83d"/>
+				</reportElement>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="-71" width="40" height="30" uuid="3265dc5a-2d02-4c63-b99c-51e2d6a1f776">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b0c4e564-505d-4424-9290-dd0a8b419e7b"/>
+				</reportElement>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="70" height="30" uuid="a80d4844-0e29-4cff-b83f-957fd5011336">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61675728-4994-4559-8ea1-f682d5bbfb6f"/>
+				</reportElement>
+				<text><![CDATA[Duracion hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="710" y="1" width="90" height="30" uuid="640f079f-9652-4538-87f4-0238d939d071">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="669a3c90-2ae3-4a64-bbc2-40cbfaab8c16"/>
+				</reportElement>
+				<text><![CDATA[Costo total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="110" height="30" uuid="2d9f622f-52a8-4c1d-8bbd-f80e723cbaea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0cf41d69-f1ae-420d-b248-25535629e878"/>
+				</reportElement>
+				<text><![CDATA[Fecha entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="0" width="120" height="30" uuid="58d60bb5-c873-4262-b8ca-74da7ccdb213">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ed49d08-c321-4784-bb9a-9de48fa81330"/>
+				</reportElement>
+				<text><![CDATA[Fecha salida]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="30" uuid="08a79e62-c495-45d7-a145-b35069663db0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d132a26-bb06-49f4-81f6-84bf4c48dffe"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{n_recibo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="90" height="30" uuid="c32a8ea7-64da-4dbd-a406-8e37e9a031a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1de7776-dc13-4faf-af57-0f3ce58af217"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="0" width="90" height="30" uuid="3b60fcf1-a70c-45b6-8cab-27c763b7066a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="135ac76e-009d-4ae4-8b67-cdced3ad257e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dniPropietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="150" height="30" uuid="dd84a1bb-9649-46ae-a8e7-f823d2eb4f7f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fb333280-340a-4ed6-8a73-d33eb0a4d460"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombrePropietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="1" width="70" height="30" uuid="2b58bc4f-6e80-414a-9690-b227b46eab18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61675728-4994-4559-8ea1-f682d5bbfb6f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TotalHoras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="710" y="1" width="90" height="30" uuid="985a35f3-299c-442c-80ea-89a25f37ec95">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="669a3c90-2ae3-4a64-bbc2-40cbfaab8c16"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="110" height="30" uuid="e0d7a7b0-2a9c-4394-a4e6-48a404dd0948">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0cf41d69-f1ae-420d-b248-25535629e878"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hora_entrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="120" height="30" uuid="3aff1480-65ed-441c-ab60-695ba8b3fc90">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ed49d08-c321-4784-bb9a-9de48fa81330"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hora_salida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

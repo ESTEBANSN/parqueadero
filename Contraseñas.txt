@@ -1,0 +1,19 @@
+-----------------------SOFTWARE SISPARQUEADERO.---------------------
+SOFTWARE PARA PARQUEADEROS
+
+
+LOGIN:
+Usuario y contraseña por defecto: usuario ADMIN contraseña ADMIN
+
+
+PARA RESPALDO Y RESTAURACION DE BASE DE DATOS
+usuario :	root
+base de datos :	sisparqueadero
+contraseña:	toor@123
+
+
+
+---------------SUGERENCIA VER VIDEO DE SU DEMOSTRACION E INSTALACION-----------
+
+
+
